@@ -1,0 +1,39 @@
+/*
+Eg 1: Input: a1b10
+       Output: abbbbbbbbbb
+Eg: 2: Input: b3c6d15
+          Output: bbbccccccddddddddddddddd
+The number varies from 1 to 99.
+*/
+import java.util.*;
+public class Main
+{
+    public static String expand(String s){
+        int i = 0;
+        StringBuilder result = new StringBuilder();
+        while(i<s.length()){
+            if(Character.isLetter(s.charAt(i))){
+                result.append(s.charAt(i));
+                i++;
+            }
+            else{
+                StringBuilder nums = new StringBuilder();
+                while(i<s.length() && Character.isDigit(s.charAt(i))){
+                    nums.append(s.charAt(i));
+                    i++;
+                }
+                int num = Integer.parseInt(nums.toString());
+                for(int k=1;k<num;k++){
+                    char prev_ch = result.charAt(result.length()-1);  // split & write these 2 sente..then only it will work
+                    result.append(prev_ch);
+                }
+            }
+        }
+        return result.toString();
+    }
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
+		System.out.println(expand(s));
+	}
+}
