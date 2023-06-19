@@ -1,0 +1,27 @@
+//count occurrences
+/*
+Input :occurrence
+Output :o1c3u1r2e2n1s1 
+*/
+import java.util.*;
+public class Main
+{
+    public static String countOcc(String s){
+        HashMap<Character,Integer> map = new HashMap<>();
+		for(char c:s.toCharArray()){
+		    map.put(c,map.getOrDefault(c,0)+1);
+		}
+		StringBuilder result = new StringBuilder();
+		for(Map.Entry<Character,Integer> entry:map.entrySet()){
+		    result.append(entry.getKey());
+		    result.append(entry.getValue());
+		}
+	    return result.toString();
+    }
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();//occurrences
+		System.out.println(countOcc);
+		
+	}
+}
