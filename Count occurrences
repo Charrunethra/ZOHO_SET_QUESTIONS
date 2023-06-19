@@ -21,7 +21,7 @@ public class Main
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String s = sc.nextLine();//occurrences
-		System.out.println(countOcc);
+		System.out.println(countOcc(s));
 		
 	}
 }
